@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # This script displays user attributes
 
-from models.bas_model import BaseModel
+from models.base_model import BaseModel
 
 
 class User(BaseModel):
