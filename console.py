@@ -8,7 +8,10 @@ from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    __classes = {"BaseModel"}
+    __classes = {
+            "BaseModel",
+            "User"
+            }
     """Methods of the console"""
     def emptyline(self):
         """Does Nothing"""
