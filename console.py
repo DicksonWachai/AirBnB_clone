@@ -52,7 +52,8 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_EOF(self, line):
-        """Ënds the program"""
+        """Signal to exit the program"""
+        print("")
         return True
 
     def do_quit(self, line):
