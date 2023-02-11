@@ -5,10 +5,15 @@ import cmd
 from models import storage
 from models.base_model import BaseModel
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     __classes = {"BaseModel"}
     """Methods of the console"""
+    def emptyline(self):
+        """Does Nothing"""
+        pass
+
     def do_create(self, line):
         """Creation of new instances"""
         new_instance = parse(line)
@@ -60,12 +65,10 @@ class HBNBCommand(cmd.Cmd):
         """Quit command to exit the program"""
         return True
 
-    def emptyline(self):
-        """Does nothing"""
-        pass
 
 def parse(args):
     return args.split()
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
