@@ -39,8 +39,8 @@ class BaseModel:
     def to_dict(self):
         my_dict = self.__dict__.copy()
         my_dict.update({
-            "__class__": self.__class__.__name__,
+            "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
-            "created_at": self.created_at.isoformat()
+            "__class__": self.__class__.__name__
             })
         return my_dict
