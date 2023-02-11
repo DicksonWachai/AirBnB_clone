@@ -2,8 +2,10 @@
 # This Script defines a BaseModel clas with
 # all common attributes for other classes
 
+
+import models
 import uuid
-from datetime import datetime
+from datetime import datetime, time, date
 
 
 class BaseModel:
@@ -16,6 +18,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
         else:
             for k, v in kwargs.items():
                 if k != "__class__":
@@ -31,9 +34,10 @@ class BaseModel:
     def save(self):
         """updates instance attribute"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
-        my_dict = self.__dict__
+        my_dict = self.__dict__.copy()
         my_dict.update({
             "__class__": self.__class__.__name__,
             "updated_at": self.updated_at.isoformat(),
