@@ -32,13 +32,12 @@ class FileStorage:
 
     def reload(self):
         """Deserializes JSON file into instances"""
-        my_dict = {"BaseModel": BaseModel}
-        obj = {}
         try:
-            with open(FileStorage.__file_path, "r") as f:
-                json_data = json.load(f)
-                for key, value in json_data.items():
-                    obj[key] = my_dict[value["__class__"]](**value)
-                FileStorage.__objects = obj
+            with open(FileStorage.__file_path) as f:
+                my_dict = json.load(f)
+                for value in my_dict.values():
+                    class_name = value["__class__"]
+                    del value["__class__"]
+                    self.new(eval(class_name)(**value))                    
         except FileNotFoundError:
             pass
