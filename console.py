@@ -10,7 +10,12 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     __classes = {
             "BaseModel",
-            "User"
+            "User",
+            "State",
+            "City",
+            "Amenity",
+            "Place",
+            "Review"
             }
     """Methods of the console"""
     def emptyline(self):
@@ -132,6 +137,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, line):
         """Quit command to exit the program"""
+        print()
         return True
 
 
