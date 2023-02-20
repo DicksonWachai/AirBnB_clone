@@ -1,14 +1,9 @@
-#!/usr/bin/env python3
-""" Defines the unittests for models/amenity.py.
-
-    Unittest classes:
-
+#!/usr/bin/python3
+"""Defines unittests for models/amenity.py.
+Unittest classes:
     TestAmenity_instantiation
-
     TestAmenity_save
-
     TestAmenity_to_dict
-
 """
 import os
 import models
@@ -19,8 +14,8 @@ from models.amenity import Amenity
 
 
 class TestAmenity_instantiation(unittest.TestCase):
-
     """Unittests for testing instantiation of the Amenity class."""
+
     def test_no_args_instantiates(self):
         self.assertEqual(Amenity, type(Amenity()))
 
@@ -90,8 +85,8 @@ class TestAmenity_instantiation(unittest.TestCase):
 
 
 class TestAmenity_save(unittest.TestCase):
-
     """Unittests for testing save method of the Amenity class."""
+
     @classmethod
     def setUp(self):
         try:
@@ -142,6 +137,7 @@ class TestAmenity_save(unittest.TestCase):
 
 class TestAmenity_to_dict(unittest.TestCase):
     """Unittests for testing to_dict method of the Amenity class."""
+
     def test_to_dict_type(self):
         self.assertTrue(dict, type(Amenity().to_dict()))
 
@@ -163,21 +159,20 @@ class TestAmenity_to_dict(unittest.TestCase):
         am = Amenity()
         am_dict = am.to_dict()
         self.assertEqual(str, type(am_dict["id"]))
-        self.assertEqual(str, type(am_dict["created_at"])
+        self.assertEqual(str, type(am_dict["created_at"]))
         self.assertEqual(str, type(am_dict["updated_at"]))
 
     def test_to_dict_output(self):
         dt = datetime.today()
         am = Amenity()
         am.id = "123456"
-        am.created_at = am.updated_at
-        am.updated_at = dt
+        am.created_at = am.updated_at = dt
         tdict = {
             'id': '123456',
             '__class__': 'Amenity',
             'created_at': dt.isoformat(),
-            'updated_at': dt.sioformat()
-            }
+            'updated_at': dt.isoformat(),
+        }
         self.assertDictEqual(am.to_dict(), tdict)
 
     def test_contrast_to_dict_dunder_dict(self):
@@ -191,5 +186,4 @@ class TestAmenity_to_dict(unittest.TestCase):
 
 
 if __name__ == "__main__":
-
     unittest.main()
