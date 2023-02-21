@@ -1,0 +1,48 @@
+/* Places styling */
+.places h1 {
+  font-size: 30px;
+  width: 100%;
+}
+.places article {
+  width: 390px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ff5a5f;
+  border-radius: 4px;
+  display: inline-block;
+}
+.places h2 {
+  font-size: 30px;
+  text-align: center;
+}
+/* price by night styling */
+.places .price_by_night {
+  align-items: center;
+  border: 4px solid #ff5a5f;
+  border-radius: 50%;
+  color: #ff5a5f;
+  display: flex;
+  font-size: 30px;
+  height: 60px;
+  justify-content: center;
+  min-width: 60px;
+}
+
+/* Guests, rooms, and bathrooms information */
+.places .information {
+  align-items: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* Width of each guest/room/bathroom sticker */
+.places .max_guest,
+.places .number_rooms,
+.places .number_bathrooms{
+  width: 100px;
+}
