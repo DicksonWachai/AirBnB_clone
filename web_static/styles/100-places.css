@@ -1,0 +1,25 @@
+.places .amenities {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+  margin-top: 40px;
+}
+.places .amenities li {
+  background: url('../images/icon_tv.png');
+  background: url('../images/icon_wifi.png');
+  background: url('../images/icon_pet.png');
+  display: flex;
+  flex-direction: row;
+}
+.places .reviews {
+  margin-top: 40px;
+}
+.places .reviews h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.places .reviews h3 {
+  font-size: 14px;
+}
+.places .reviews li p {
+  font-size: 12px;
+}
